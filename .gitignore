@@ -1,6 +1,15 @@
+# Secrets
+.env
+.env.*
+*.env
+
+# Python
 __pycache__/
 *.pyc
-.env
 venv/
+.venv/
+
+# IDE
 .vscode/
+.idea/
 .DS_Store
