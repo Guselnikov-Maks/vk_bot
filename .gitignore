@@ -1,17 +1,17 @@
-# Secrets
-.env
-.env.*
-*.env
-
-!.env.example
-
 # Python
 __pycache__/
 *.pyc
 venv/
 .venv/
 
-# IDE
-.vscode/
-.idea/
-.DS_Store
+# Secrets
+.env
+.env.*
+
+# Logs
+*.log
+logs/
+
+# Excel reports
+excel_reports/
+*.xlsx
