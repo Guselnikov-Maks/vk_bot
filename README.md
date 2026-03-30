@@ -83,10 +83,12 @@ python main.py
 ## 🗄️ Настройка базы данных
 
 ### Шаг 1: Создание БД и пользователя
-```sql
+```bash
 -- Подключитесь к MySQL
 mysql -u root -p
+```
 
+```sql
 -- Создайте базу данных
 CREATE DATABASE IF NOT EXISTS vk_bot 
 CHARACTER SET utf8mb4 
@@ -189,6 +191,7 @@ Long Poll API
 Создайте ключ доступа с правами messages
 
 ## 📁 Структура проекта
+
 vk_bot/
 ├── .env                    # Конфигурация (не коммитить!)
 ├── .env.example            # Пример конфигурации
@@ -210,7 +213,7 @@ vk_bot/
 ├── parser.log             # Логи парсера
 └── cleaner.log            # Логи очистки
 
-##🤖 Команды бота
+## 🤖 Команды бота
 Команда	Что делает
 начать / start	Приветственное сообщение
 регистрация	Начать процесс регистрации
@@ -239,6 +242,7 @@ tail -f bot.log
 
 # Поиск ошибок
 grep ERROR *.log
+```
 
 ## 🧹 Обслуживание
 
@@ -249,15 +253,18 @@ python cleanup_excel.py
 
 # Автоматически (crontab)
 # 0 2 * * * cd /path/to/vk_bot && python cleanup_excel.py
+```
 
 ### Резервное копирование БД
 ```bash
 mysqldump -u vk_bot_user -p vk_bot > backup_$(date +%Y%m%d).sql
 gzip backup_*.sql
+```
 
 ### Обновление зависимостей
 ```bash
 pip install --upgrade -r requirements.txt
+```
 
 ## 👤 Контакты
 По вопросам обращаться к администратору.
