@@ -78,7 +78,7 @@ sudo apt-get install google-chrome-stable
 ### 6. Запуск
 ```bash
 python main.py
----
+```
 
 ## 🗄️ Настройка базы данных
 
@@ -101,6 +101,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON vk_bot.*
 TO 'vk_bot_user'@'localhost';
 
 FLUSH PRIVILEGES;
+```
 
 ### Шаг 2: Создание таблиц
 ```sql
@@ -129,26 +130,31 @@ CREATE TABLE IF NOT EXISTS user_values (
     INDEX idx_created_at (created_at),
     INDEX idx_user_date (user_id, added_at)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+```
 
 ### Шаг 3: Проверка
 ```sql
 SHOW TABLES;
 DESCRIBE users;
 DESCRIBE user_values;
+```
 
 ## ⚙️ Конфигурация
 
 ### 1. Создайте .env
 ```bash
 cp .env.example .env
+```
 
 ### 2. Сгенерируйте ключ шифрования
 ```bash
 python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
+```
 
 Вывод (пример):
 ```bash
 gAAAAABn7ZqWx8XhL3jK5mN2pQ9rS4tU6vY7wZ0aB1cD2eF3gH4iJ5kL6mN7oP8qR9sT0uV=
+```
 
 ### 3. Заполните .env
 ```bash
@@ -168,6 +174,7 @@ ENCRYPTION_KEY=gAAAAABn7ZqWx8XhL3jK5mN2pQ9rS4tU6vY7wZ0aB1cD2eF3gH4iJ5kL6mN7oP8qR
 # Logging
 LOG_DIR=.
 LOG_LEVEL=INFO
+```
 
 ### 4. Получение VK токена
 
